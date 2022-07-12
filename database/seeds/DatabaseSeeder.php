@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PizzasTableSeeder::class);
         $this->call(IngredientsTableSeeder::class);
+        $this->call(PizzasIngredientsTableSeeder::class);
+
 
     }
 }
