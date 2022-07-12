@@ -29,7 +29,8 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        return view('admin.pizzes.create');
+        $ingredients=Ingredient::all();
+        return view('admin.pizzes.create', compact('ingredients'));
     }
 
     /**
@@ -72,8 +73,9 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
+        $ingredients=Ingredient::all();
         $pizza = Pizza::find($id);
-        return view('admin.pizzes.edit', compact('pizza'));
+        return view('admin.pizzes.edit', compact('pizza','ingredients'));
     }
 
     /**

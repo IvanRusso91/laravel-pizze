@@ -90,7 +90,13 @@
                     <h6 class="card-text">{{$pizza->prezzo}}</p>
                     <p class="card-text">{{$pizza->popolarita}}</p>
                     <p class="card-text">{{$pizza->ingredienti}}</p>
-                    <p class="card-text">{{$pizza->vegetariana}}</p>
+                    <p>
+                        @if ($pizza->vegetariana === 0)
+                            NO
+                        @else
+                            SI
+                        @endif
+                    </p>
                     </div>
                 </div>
             @endforeach
