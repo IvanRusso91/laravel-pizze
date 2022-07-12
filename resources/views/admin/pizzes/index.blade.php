@@ -28,7 +28,14 @@
                     <td>{{$pizza->id}}</td>
                     <td>{{$pizza->nome}}</td>
                     <td>{{$pizza->prezzo}}€</td>
-                    <td class="w-25">{{$pizza->ingredienti}}</td>
+                    <td class="w-25">
+
+                        @forelse ($pizza->ingredients as $ingredient )
+                             {{$ingredient->ingredient}}
+                        @empty
+                           -
+                        @endforelse
+                    </td>
                     <td>{{$pizza->popolarita}}</td>
                     <td>
                         @if ($pizza->vegetariana === 0)
@@ -48,7 +55,7 @@
                     </td>
                 </tr>
             @endforeach
-          
+
         </tbody>
       </table>
 </div>

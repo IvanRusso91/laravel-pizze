@@ -6,6 +6,7 @@ use App\Http\Requests\PizzaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Pizza;
+use App\Ingredient;
 
 class PizzaController extends Controller
 {
@@ -16,8 +17,9 @@ class PizzaController extends Controller
      */
     public function index()
     {
+        $ingredients=Ingredient::all();
         $pizzas = Pizza::orderBy('id', 'desc')->get();
-        return view('admin.pizzes.index', compact('pizzas'));
+        return view('admin.pizzes.index', compact('pizzas','ingredients'));
     }
 
     /**

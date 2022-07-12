@@ -9296,3 +9296,10 @@ body {
 .pizza img {
   width: 100%;
 }
+
+.table {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  padding: 10px;
+}
