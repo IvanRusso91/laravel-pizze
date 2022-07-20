@@ -9,7 +9,7 @@ use App\Pizza;
 class PageController extends Controller
 {
     public function index(){
-        $pizza= Pizza::with(['nome','vegetariana'])->get();
+        $pizza= Pizza::all();
 
         return response()->json($pizza);
 

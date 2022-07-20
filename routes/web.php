@@ -14,12 +14,12 @@ use App\Pizza;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
 
-    $pizzas = Pizza::all();
+//     $pizzas = Pizza::all();
 
-    return view('guest.welcome', compact('pizzas'));
-});
+//     return view('guest.welcome', compact('pizzas'));
+// });
 
 Auth::routes();
 
@@ -31,3 +31,7 @@ Route::middleware('auth')
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('pizzas', 'PizzaController');
 });
+
+Route::get('{any?}', function(){
+    return view('guest.home');
+})->where('any','.*')->name('home');
